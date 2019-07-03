@@ -1,12 +1,21 @@
 const charactersAPI = new APIHandler("http://localhost:8000")
 
-$(document).ready( () => {
-  document.getElementById('fetch-all').onclick = function(){
+const characterContainerDOMEL = document.querySelector(".character-info")
+const characterName = document.querySelector(".name")
+const characterOccupation = document.querySelector(".occupation")
+const characterCartoon = document.querySelector(".cartoon")
+const characterWeapon = document.querySelector(".weapon")
 
+
+
+$(document).ready( () => {
+  
+  document.getElementById('fetch-all').onclick = function(){
+    charactersAPI.getFullList()
   }
   
   document.getElementById('fetch-one').onclick = function(){
-    
+    charactersAPI.getOneRegister()
   }
   
   document.getElementById('delete-one').onclick = function(){
